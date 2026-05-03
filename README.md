@@ -1,2 +1,6 @@
-# kotlin-guide
-Manual definitivo de Kotlin em pt-BR
+# Kotlin Guide
+
+  O livro completo de Kotlin em português: 140 capítulos.
+
+  🌐 https://wallysondevs.github.io/kotlin-guide/
+  

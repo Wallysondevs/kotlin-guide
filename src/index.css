@@ -1,0 +1,74 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-sans: 'Inter', sans-serif;
+  --font-mono: 'Fira Code', monospace;
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+  --color-border: hsl(var(--border));
+  --radius: 0.5rem;
+}
+
+:root {
+  --background: 0 0% 100%;
+  --foreground: 222 47% 11%;
+  --card: 0 0% 98%;
+  --card-foreground: 222 47% 11%;
+  --primary: 264 100% 66%;
+  --primary-foreground: 0 0% 100%;
+  --muted: 210 40% 96%;
+  --muted-foreground: 215 16% 47%;
+  --accent: 264 80% 95%;
+  --accent-foreground: 264 70% 30%;
+  --border: 214 32% 91%;
+}
+
+.dark {
+  --background: 222 47% 6%;
+  --foreground: 210 40% 98%;
+  --card: 222 47% 9%;
+  --card-foreground: 210 40% 98%;
+  --primary: 270 100% 75%;
+  --primary-foreground: 0 0% 100%;
+  --muted: 217 33% 17%;
+  --muted-foreground: 215 20% 65%;
+  --accent: 264 50% 22%;
+  --accent-foreground: 264 80% 90%;
+  --border: 217 33% 18%;
+}
+
+* { border-color: hsl(var(--border)); }
+body { font-family: var(--font-sans); background: hsl(var(--background)); color: hsl(var(--foreground)); }
+code, pre { font-family: var(--font-mono); }
+
+.chapter h1 { font-size: 2rem; font-weight: 800; margin: 1.5rem 0 1rem; line-height: 1.15; }
+.chapter h2 { font-size: 1.4rem; font-weight: 700; margin: 2rem 0 .75rem; padding-bottom: .25rem; border-bottom: 1px solid hsl(var(--border)); }
+.chapter h3 { font-size: 1.15rem; font-weight: 600; margin: 1.5rem 0 .5rem; color: hsl(var(--primary)); }
+.chapter p { margin: .75rem 0; line-height: 1.7; }
+.chapter ul { margin: .75rem 0 .75rem 1.5rem; list-style: disc; }
+.chapter ul li { margin: .25rem 0; line-height: 1.6; }
+.chapter code { background: hsl(var(--muted)); padding: .1rem .35rem; border-radius: .25rem; font-size: .9em; }
+.chapter pre { background: hsl(var(--card)); border: 1px solid hsl(var(--border)); border-radius: .5rem; padding: 1rem; margin: 1rem 0; overflow-x: auto; }
+.chapter pre code { background: transparent; padding: 0; font-size: .85rem; line-height: 1.55; }
+.chapter strong { font-weight: 600; color: hsl(var(--foreground)); }
+.chapter .callout { margin: 1rem 0; padding: .85rem 1rem; border-radius: .5rem; border-left: 3px solid; }
+.chapter .callout-info { background: hsl(var(--accent) / .4); border-color: hsl(var(--primary)); }
+.chapter .callout-warn { background: hsl(45 100% 50% / .08); border-color: hsl(45 100% 50%); }
+.chapter .callout-tip { background: hsl(190 80% 50% / .08); border-color: hsl(190 80% 50%); }
+.chapter .callout-title { font-weight: 600; margin-bottom: .25rem; }
+
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: hsl(var(--background)); }
+::-webkit-scrollbar-thumb { background: hsl(var(--muted)); border-radius: 5px; }
+::-webkit-scrollbar-thumb:hover { background: hsl(var(--muted-foreground) / .5); }
